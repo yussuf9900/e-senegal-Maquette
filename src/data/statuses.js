@@ -1,0 +1,51 @@
+export const statuses = {
+  BROUILLON: {
+    fr: "Brouillon",
+    wo: "Brouillon",
+    color: "neutral",
+    icon: "edit",
+    description: "Votre dossier peut encore être modifié.",
+  },
+  SOUMIS: {
+    fr: "Soumis",
+    wo: "Yónnee nañu ko",
+    color: "blue",
+    icon: "send",
+    description: "Votre demande a bien été reçue.",
+  },
+  EN_ETUDE: {
+    fr: "En étude",
+    wo: "Ñu ngi koy seet",
+    color: "blue",
+    icon: "clock",
+    description: "Le service examine votre dossier.",
+  },
+  COMPLEMENT_REQUIS: {
+    fr: "Complément requis",
+    wo: "Yokk ay kayit",
+    color: "gold",
+    icon: "alert",
+    description: "Un document supplémentaire est nécessaire.",
+  },
+  VALIDE: {
+    fr: "Validé",
+    wo: "Nangu nañu ko",
+    color: "green",
+    icon: "check",
+    description: "Votre démarche est terminée.",
+  },
+  REJETE: {
+    fr: "Rejeté",
+    wo: "Nanguwuñu ko",
+    color: "red",
+    icon: "x",
+    description: "Consultez le motif dans votre dossier.",
+  },
+  ANNULE: {
+    fr: "Annulé",
+    wo: "Neenal nañu ko",
+    color: "neutral",
+    icon: "x",
+    description: "Cette demande a été annulée.",
+  },
+};

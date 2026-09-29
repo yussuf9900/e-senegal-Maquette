@@ -1,0 +1,101 @@
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes step-in {
+  from {
+    opacity: 0.4;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+.motion-ready {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s,
+    transform 0.6s;
+}
+.motion-ready.visible {
+  opacity: 1;
+  transform: none;
+}
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  pointer-events: none;
+  animation: intro-out 1.4s forwards;
+}
+.intro strong {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  animation: toast-in 0.5s 0.1s both;
+}
+.intro .brand-symbol {
+  width: 55px;
+  height: 55px;
+  font-size: 48px;
+  line-height: 55px;
+  animation: toast-in 0.4s both;
+}
+@keyframes intro-out {
+  0%,
+  65% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+::view-transition-old(root) {
+  animation-duration: 0.18s;
+}
+::view-transition-new(root) {
+  animation-duration: 0.22s;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .motion-ready {
+    opacity: 1;
+    transform: none;
+  }
+  .tilt {
+    transform: none !important;
+  }
+  .intro {
+    display: none;
+  }
+}
